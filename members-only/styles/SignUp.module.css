@@ -1,0 +1,21 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    margin: 0 auto;
+}
+
+.formContainer > label:nth-child(n) {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.formContainer > input:nth-child(n) {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.signUpButton {
+    width: 5em;
+    margin-left: 95px;
+    margin-top: 5px;
+}
