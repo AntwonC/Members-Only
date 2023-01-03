@@ -1,7 +1,7 @@
 .formContainer {
     display: flex;
     flex-direction: column;
-    width: 10em;
+    width: 12em;
     margin: 0 auto;
 }
 
