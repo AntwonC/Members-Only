@@ -2,19 +2,34 @@ import { useState } from 'react';
 import Link from 'next/link';
 import signUpStyles from '../../styles/SignUp.module.css';
 
-
 const SignUp = () => {
     
     const URL = 'http://localhost:3001';
 
     const [signUpInfo, setSignUpInfo] = useState({
+        signUpFirstName: '',
+        signUpLastName: '',
         signUpEmail: '',
         signUpPassword: '',
         signUpConfirmPassword: '',
     });
 
     const [errors, setErrors] = useState('');
+    const [success, setSuccess] = useState('');
 
+    const clearsAllInputs = () => {
+      console.log(`Attempting to clear all inputs....`);
+     // setSignUpInfo((prevState) => ({ ...prevState, [prevState]: ''}));
+        const cleanSlate = ({
+          signUpFirstName: '',
+          signUpLastName: '',
+          signUpEmail: '',
+          signUpPassword: '',
+          signUpConfirmPassword: '',
+        });
+        
+        setSignUpInfo(cleanSlate);
+    }
 
     const signUpButtonClicked = async (evt) => {
         evt.preventDefault();
@@ -42,6 +57,7 @@ const SignUp = () => {
                   //console.log(data.message);
                   throw Error(data.message);
                 });
+
               } else if (res.status === 403) {
 
                 const jsonData = res.json();
@@ -53,10 +69,15 @@ const SignUp = () => {
                       throw Error('Invalid email');
                    } else if (signUp === 'signUpPassword') {
                       throw Error('Minimum password of 5 characters long');
+                   } else if (signUp === 'signUpConfirmPassword') {
+                      throw Error('Must fill in the confirm password field!');
                    }
                 })
               } else if (res.status === 205) {
                 console.log("SignUp Successful");
+                //location.reload();
+                clearsAllInputs();
+                setSuccess("Sign-Up Successful!");
               }
                
             })
@@ -75,8 +96,13 @@ const SignUp = () => {
 
     return (
         <div>
-          <div>{errors}</div>
+          <div className={errors.length > 0 ? signUpStyles.errorDivShown : signUpStyles.errorDiv}>{errors}</div> 
+          <div className={success.length > 0 ? signUpStyles.successDivShown : signUpStyles.successDiv}>{success}</div>
             <form className={signUpStyles.formContainer}>
+                <label htmlFor="signUpFirstName">First Name: </label>
+                <input type="text" name="signUpFirstName" onChange={handleChange}></input>
+                <label htmlFor="signUpLastName">Last Name: </label>
+                <input type="text" name="signUpLastName" onChange={handleChange}></input>
                 <label htmlFor="signUpEmail">Email: </label>
                 <input type="text" name="signUpEmail" onChange={handleChange}></input>
                 <label htmlFor="signUpPassword">Password: </label>
@@ -87,10 +113,17 @@ const SignUp = () => {
             </form>
 
             
-            <div>You are at the SIGN-UP page!</div>
-            <button>
-                <Link href="/">Back to Home</Link>
-            </button>
+            { /* <div>You are at the SIGN-UP page!</div> */ }
+
+            <div className={signUpStyles.buttonContainer}>
+                <button className={signUpStyles.homeButton}>
+                    <Link href="/">Back to Home</Link>
+                </button>
+                <button className={signUpStyles.loginButton}>
+                    <Link href="/login">Go to Login</Link>
+                </button>
+            </div>
+
         </div>
     );
 }

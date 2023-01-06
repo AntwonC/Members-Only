@@ -19,3 +19,48 @@
     margin-left: 95px;
     margin-top: 5px;
 }
+
+/* Error and Success messages */
+.successDiv {
+    display: none;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: green;
+}
+
+.errorDiv {
+    display: none; 
+    justify-content: center;
+    margin-bottom: 15px;
+    color: red;
+}
+
+.successDivShown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: green;
+}
+
+.errorDivShown {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 15px;
+    color: red;
+}
+
+/* Error and Success messages */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+.loginButton {
+   
+    
+}
+
+.homeButton {
+  
+   
+}
