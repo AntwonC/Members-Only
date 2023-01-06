@@ -27,6 +27,8 @@ const SignUp = () => {
           signUpPassword: '',
           signUpConfirmPassword: '',
         });
+
+        setErrors('');
         
         setSignUpInfo(cleanSlate);
     }
@@ -96,8 +98,8 @@ const SignUp = () => {
 
     return (
         <div>
-          <div className={errors.length > 0 ? signUpStyles.errorDivShown : signUpStyles.errorDiv}>{errors}</div> 
-          <div className={success.length > 0 ? signUpStyles.successDivShown : signUpStyles.successDiv}>{success}</div>
+          <div className={(errors.length > 0 && success.length === 0) ? signUpStyles.errorDivShown : signUpStyles.errorDiv}>{errors}</div> 
+          <div className={(success.length > 0 && errors.length === 0) ? signUpStyles.successDivShown : signUpStyles.successDiv}>{success}</div>
             <form className={signUpStyles.formContainer}>
                 <label htmlFor="signUpFirstName">First Name: </label>
                 <input type="text" name="signUpFirstName" onChange={handleChange}></input>
