@@ -122,7 +122,7 @@ const SignUp = () => {
                     <Link href="/">Back to Home</Link>
                 </button>
                 <button className={signUpStyles.loginButton}>
-                    <Link href="/login">Go to Login</Link>
+                    <Link href="/loginPage/login">Go to Login</Link>
                 </button>
             </div>
 
