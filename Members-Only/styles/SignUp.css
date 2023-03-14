@@ -1,0 +1,28 @@
+.signUpFormContainer {
+    display: flex;
+    flex-direction: column;
+    width: 12em;
+    margin: 0 auto;
+}
+
+.signUpFormContainer > label:nth-child(n) {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.signUpFormContainer > input:nth-child(n) {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.signUpButton {
+    width: 5em;
+    margin-left: 95px;
+    margin-top: 5px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
