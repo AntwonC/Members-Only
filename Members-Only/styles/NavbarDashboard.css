@@ -1,0 +1,53 @@
+.navbarContainer {
+    display: flex;
+    background-color: green;
+    height: 1.7em;
+}
+
+.navbarLinksContainer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    
+}
+
+.leftSide {
+   display: flex;
+   gap: 20px;
+   
+   
+}
+
+.rightSide {
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.dashboardUserName {
+    justify-content: flex-start;
+    font-family: Roboto-Light;
+    font-size: 1.2em;
+    color: purple;
+}
+
+.buttonElement {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: Roboto-Light;
+    font-size: 1.2em;
+    align-items: flex-end;
+}
+
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/RobotoSlabLight.ttf');
+}

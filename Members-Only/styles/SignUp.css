@@ -15,14 +15,18 @@
     margin-bottom: 3px;
 }
 
-.signUpButton {
-    width: 5em;
-    margin-left: 95px;
-    margin-top: 5px;
-}
-
 .buttonContainer {
     display: flex;
-    justify-content: center;
-    gap: 150px;
+    margin-top: 10px;
+
 }
+.signUpButton {
+    margin-left: auto;
+}
+
+.adminPasswordField {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+

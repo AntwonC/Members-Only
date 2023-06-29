@@ -1,0 +1,33 @@
+.navbarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: green;
+    height: 2em;
+}
+
+.navbarLinksContainer {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.buttonElement {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: Roboto-Light;
+    font-size: 1.4em;
+}
+
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/RobotoSlabLight.ttf');
+}

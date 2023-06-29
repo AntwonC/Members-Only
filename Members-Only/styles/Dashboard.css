@@ -1,0 +1,35 @@
+.chatroom-container {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 50px;
+}
+
+.user-input {
+    width: 254px;
+}
+
+.send-button {
+    
+}
+
+.button-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    gap: 5px;
+
+
+}
+.create-button {
+
+}
+
+.members-button {
+
+    
+}
+
+.logout-button {
+    position: absolute;
+    bottom: 0;
+}
